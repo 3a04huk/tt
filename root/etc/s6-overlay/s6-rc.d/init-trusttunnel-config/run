@@ -58,7 +58,7 @@ if [[ "${MODE}" == "server" ]]; then
                 if [[ -n "${user}" && -n "${pass}" ]]; then
                     cat >> "${SERVER_DIR}/credentials.toml" <<CREDEOF
 
-[[credentials]]
+[[client]]
 username = "${user}"
 password = "${pass}"
 CREDEOF

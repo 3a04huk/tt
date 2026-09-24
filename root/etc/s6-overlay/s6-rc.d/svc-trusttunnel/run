@@ -32,6 +32,7 @@ elif [[ "${MODE}" == "client" ]]; then
     fi
 
     exec \
+        s6-notifyoncheck -3 3 -d -n 300 -w 1000 -c "pgrep -f trusttunnel_endpoint" \
         trusttunnel_client -c "${CONFIG_FILE}"
 
 else
